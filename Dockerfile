@@ -4,6 +4,6 @@ LABEL MAINTAINER="Xudong Cai <fifsky@gmail.com>"
 
 COPY . .
 
-RUN npm install --production
+RUN npm install --omit=dev
 
-ENTRYPOINT ["node", "/lib/main.js"]
+ENTRYPOINT ["node", "lib/main.js"]
