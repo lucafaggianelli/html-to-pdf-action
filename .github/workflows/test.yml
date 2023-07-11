@@ -5,11 +5,7 @@ on: [push, pull_request]
 jobs:
   html_to_pdf:
     name: Generate PDF
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
+    runs-on: [ubuntu-latest]
 
     steps:
       - name: Checkout code
