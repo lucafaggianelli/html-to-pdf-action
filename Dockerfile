@@ -7,7 +7,7 @@ USER root
 WORKDIR /html-to-pdf-action/
 
 # Install NPM dependencies
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
 
 COPY src ./src
