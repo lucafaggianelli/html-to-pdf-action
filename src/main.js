@@ -17,7 +17,7 @@ async function run() {
     await convertHtmlToPdf({
       launchOptions: {
         executablePath: '/usr/bin/google-chrome-stable',
-        args: ['--headless', '--disable-gpu', '--font-render-hinting=none'],
+        args: ['--no-sandbox', '--headless', '--disable-gpu', '--font-render-hinting=none'],
         dumpio: true,
       },
       pdfOptions: pdfOptions ? JSON.parse(pdfOptions) : {},
