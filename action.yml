@@ -10,7 +10,7 @@ inputs:
     description: "output file path"
     required: true
 
-  base_url:
+  baseUrl:
     description: "Base url when serving the HTML file"
     required: false
     default: ""

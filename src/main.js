@@ -15,16 +15,10 @@ async function run() {
 
   try {
     await convertHtmlToPdf({
-      launchOptions: {
-        executablePath: '/usr/bin/google-chrome-stable',
-        args: ['--no-sandbox', '--headless', '--disable-gpu', '--font-render-hinting=none'],
-        dumpio: true,
-      },
       pdfOptions: pdfOptions ? JSON.parse(pdfOptions) : {},
       htmlFile,
       outputFile,
       baseUrl,
-
     })
 
     console.log('PDF Generate DONE:', outputFile)

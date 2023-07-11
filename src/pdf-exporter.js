@@ -9,7 +9,6 @@ import express from 'express'
  * @param {string} options.htmlFile
  * @param {string} options.outputFile
  * @param {object} options.pdfOptions
- * @param {object} options.launchOptions
  * @param {string} options.baseUrl
  *
  */
@@ -19,7 +18,15 @@ export const convertHtmlToPdf = async (options) => {
     .listen(3000)
 
   const browser = await puppeteer.launch({
-    ...options.launchOptions,
+    executablePath: '/usr/bin/google-chrome-stable',
+    args: [
+      // mandatory to run as root
+      '--no-sandbox',
+      '--headless',
+      '--disable-gpu',
+      '--font-render-hinting=none',
+    ],
+    dumpio: true,
     headless: 'new',
   })
   const page = await browser.newPage()
