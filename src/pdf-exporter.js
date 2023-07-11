@@ -1,8 +1,7 @@
 import path from 'path'
 
 import puppeteer from 'puppeteer'
-
-import Server from './server.js'
+import express from 'express'
 
 /**
  *
@@ -15,8 +14,9 @@ import Server from './server.js'
  *
  */
 export const convertHtmlToPdf = async (options) => {
-  // Start an HTTP server to serve the HTML file
-  const server = new Server(path.join(process.cwd(), options.baseUrl || ''))
+  const server = express()
+    .use(express.static(path.join(process.cwd(), options.baseUrl || '')))
+    .listen(3000)
 
   const browser = await puppeteer.launch({
     ...options.launchOptions,

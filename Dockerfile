@@ -7,7 +7,7 @@ USER root
 WORKDIR /github/workspace/
 
 # Install NPM dependencies
-COPY package.json /html-to-pdf-action/
+COPY package.json .
 RUN npm install -g --verbose
 
 COPY src /html-to-pdf-action/src
