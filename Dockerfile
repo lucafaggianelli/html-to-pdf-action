@@ -4,12 +4,12 @@ FROM ghcr.io/puppeteer/puppeteer:20.8.0
 # though they're set by puppeteer image
 # so we need to reset them here
 USER root
-WORKDIR /github/workspace/
+WORKDIR /html-to-pdf-action/
 
 # Install NPM dependencies
-COPY package.json /html-to-pdf-action/
-RUN npm install -g --verbose express puppeteer
+COPY package.json .
+RUN npm install --verbose express puppeteer
 
-COPY src /html-to-pdf-action/src
+COPY src ./src
 
 ENTRYPOINT ["node", "/html-to-pdf-action/src/main.js"]
