@@ -1,8 +1,5 @@
 import { convertHtmlToPdf } from './pdf-exporter.js'
 
-console.log('CWD is', process.cwd())
-console.log('GH workspace is', process.env.GITHUB_WORKSPACE)
-
 const getInput = (name) => process.env[`INPUT_${name.toUpperCase()}`]
 
 async function run() {

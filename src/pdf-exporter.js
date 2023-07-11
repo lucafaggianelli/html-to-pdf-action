@@ -26,13 +26,11 @@ export const convertHtmlToPdf = async (options) => {
       '--disable-gpu',
       '--font-render-hinting=none',
     ],
+    // Show console logs in the terminal
     dumpio: true,
     headless: 'new',
   })
   const page = await browser.newPage()
-  await page.setUserAgent(
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36',
-  )
 
   const url = `http://localhost:3000/${options.htmlFile}`
 

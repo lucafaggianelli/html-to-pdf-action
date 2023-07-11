@@ -7,8 +7,8 @@ USER root
 WORKDIR /html-to-pdf-action/
 
 # Install NPM dependencies
-COPY package.json .
-RUN npm install --verbose express puppeteer
+COPY package*.json .
+RUN npm install
 
 COPY src ./src
 
