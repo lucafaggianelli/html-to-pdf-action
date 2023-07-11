@@ -1,7 +1,7 @@
 FROM ghcr.io/puppeteer/puppeteer:20.8.0
 
-COPY package.json .
-COPY package-lock.json .
+# Install NPM dependencies
+COPY package.json ./
 RUN npm install --verbose
 
 COPY . .
