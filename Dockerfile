@@ -8,7 +8,7 @@ WORKDIR /github/workspace/
 
 # Install NPM dependencies
 COPY package.json /html-to-pdf-action/
-RUN npm install -g --verbose --prefix /html-to-pdf-action/
+RUN npm install -g --verbose express puppeteer
 
 COPY src /html-to-pdf-action/src
 
