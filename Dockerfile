@@ -1,11 +1,10 @@
 FROM ghcr.io/puppeteer/puppeteer:20.8.0
 
-LABEL MAINTAINER="Xudong Cai <fifsky@gmail.com>"
-
 WORKDIR /home/pptruser
 
 COPY package.json .
-RUN npm install
+COPY package-lock.json .
+RUN npm install --verbose
 
 COPY . .
 
