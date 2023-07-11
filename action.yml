@@ -10,6 +10,11 @@ inputs:
     description: "output file path"
     required: true
 
+  base_url:
+    description: "Base url when serving the HTML file"
+    required: false
+    default: ""
+
   pdfOptions:
     description: |
       PDF options as described here:
